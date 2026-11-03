@@ -602,7 +602,7 @@ struct host_strategy : public display_strategy
         GL(glTextureStorage2D(
             frame.tex, 1, config.high_bitdepth ? GL_RGBA16 : GL_RGBA8, format_desc.width, format_desc.height));
         GL(glClearTexImage(
-            frame.tex, 0, GL_BGRA, config.high_bitdepth ? GL_UNSIGNED_SHORT : GL_UNSIGNED_BYTE, nullptr));
+            frame.tex, 0, GL_RGBA, config.high_bitdepth ? GL_UNSIGNED_SHORT : GL_UNSIGNED_BYTE, nullptr));
 
         return frame;
     }
@@ -655,7 +655,7 @@ struct host_strategy : public display_strategy
                                    0,
                                    self->format_desc_.width,
                                    self->format_desc_.height,
-                                   GL_BGRA,
+                                   GL_RGBA,
                                    self->config_.high_bitdepth ? GL_UNSIGNED_SHORT : GL_UNSIGNED_BYTE,
                                    nullptr));
             GL(glBindBuffer(GL_PIXEL_UNPACK_BUFFER, 0));

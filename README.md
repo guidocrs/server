@@ -8,7 +8,7 @@ CasparCG Server has been in 24/7 broadcast production since 2006.
 The CasparCG Server works on Windows and Linux.
 
 System Requirements
--------------------
+--------------------
 
 - A graphics card (GPU) capable of OpenGL 4.5 is required.
 - An Nvidia GPU is recommended, but other GPU's will likely work fine.

@@ -838,6 +838,18 @@ spl::shared_ptr<core::frame_consumer> create_consumer(const std::vector<std::wst
         config.key_only = false;
     }
 
+    config.vsync         = contains_param(L"VSYNC", params);
+    config.always_on_top = contains_param(L"ALWAYS_ON_TOP", params);
+
+    auto stretch_str = get_param(L"STRETCH", params, L"fill");
+    if (stretch_str == L"none") {
+        config.stretch = screen::stretch::none;
+    } else if (stretch_str == L"uniform") {
+        config.stretch = screen::stretch::uniform;
+    } else if (stretch_str == L"uniform_to_fill") {
+        config.stretch = screen::stretch::uniform_to_fill;
+    }
+
     if (contains_param(L"DELAY", params)) {
         config.delay = timespan{ u8(get_param(L"DELAY", params, L"")) };
     }
